@@ -3,7 +3,7 @@ const profil = {
   nama: "M. A. Dzakii Ikhsan S.",
   inisial: "MADIS",
   peran: "Bachelor of Mechanical Engineering<br>Universitas Sebelas Maret",
-  foto: "PP.jpeg",
+  foto: "pp.jpeg",
   email: "ikhsan090607@gmail.com",
   linkedin: "https://www.linkedin.com/in/muhammad-alif-dzakii-ikhsan-sofyan-847679420/",
   instagram: "https://instagram.com/reyana.sn",
