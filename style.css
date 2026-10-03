@@ -1,0 +1,229 @@
+/* ===== WARNA & FONT (ubah di sini untuk ganti tema) ===== */
+:root {
+  --bg: #f4f6f8;
+  --ink: #101a23;
+  --muted: #5d6b78;
+  --line: #d9e0e6;
+  --soft: #e6ecf0;
+  --accent: #f25c05;
+  --radius: 12px;
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f161d;
+    --ink: #e9eef2;
+    --muted: #96a4b1;
+    --line: #26323d;
+    --soft: #19232c;
+    --accent: #ff7a2e;
+  }
+}
+
+/* ===== DASAR ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.7;
+}
+body.no-scroll { overflow: hidden; }
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.2; }
+
+.shell { max-width: 1180px; margin: 0 auto; }
+
+/* ===== BANNER (seperti banner channel YouTube) ===== */
+.banner { max-width: 1180px; margin: 0 auto; padding: 1rem 1.5rem 0; }
+.banner .frame { aspect-ratio: 3 / 1; }
+@media (min-width: 640px) {
+  .banner .frame { aspect-ratio: 6 / 1; }
+}
+
+/* ===== PANEL KIRI ===== */
+.side { padding: 2rem 1.5rem 1rem; }
+
+.portrait { position: relative; max-width: 190px; aspect-ratio: 4 / 5; margin: 0 0 1.75rem; }
+.portrait::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(8px, 8px);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+}
+.portrait .frame { position: absolute; inset: 0; }
+
+.name { font-family: var(--display); font-weight: 800; font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em; }
+.name a { color: inherit; text-decoration: none; }
+.role { color: var(--muted); margin-top: 0.4rem; }
+
+.menu { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; margin-top: 1.75rem; }
+.menu a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+.menu a:hover { color: var(--accent); }
+.menu a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+
+.links { list-style: none; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); display: grid; gap: 0.2rem; font-size: 0.95rem; }
+
+/* ===== FRAME FOTO (dipakai semua foto) =====
+   Foto otomatis dipotong (crop) mengikuti rasio bingkainya */
+.frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background-color: var(--soft);
+  /* pola kotak-kotak tampil kalau fotonya belum ada */
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a.frame { display: block; }
+
+/* Varian untuk sertifikat dan slide: ditampilkan utuh, tidak dipotong */
+.frame.contain { background-image: none; border: 1px solid var(--line); }
+.frame.contain img { object-fit: contain; }
+
+/* ===== ISI KANAN ===== */
+.content { padding: 1rem 1.5rem 3rem; }
+.content section { padding: 2.5rem 0; border-top: 1px solid var(--line); }
+.content section.hero { border-top: 0; padding-top: 1.5rem; }
+.content section.plain { border-top: 0; padding: 1.5rem 0 0; }
+.content h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+
+.sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.25rem 1rem; margin-bottom: 1.5rem; }
+.sec-head h2 { margin-bottom: 0; }
+.sec-head a { font-size: 0.93rem; font-weight: 600; }
+
+.statement { font-family: var(--display); font-weight: 600; font-size: clamp(1.5rem, 3.4vw, 2.3rem); line-height: 1.3; letter-spacing: -0.01em; max-width: 30em; }
+.intro { color: var(--muted); max-width: 42em; margin-top: 1.25rem; }
+
+.skills { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.skills li { border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.9rem; font-size: 0.9rem; font-weight: 500; }
+
+/* ===== HALAMAN DALAM ===== */
+.back { display: inline-block; font-size: 0.93rem; font-weight: 600; margin: 1rem 0 1.5rem; }
+.page-title { font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; }
+.page-intro { color: var(--muted); margin: 0.5rem 0 2rem; max-width: 40em; }
+
+/* ===== DAFTAR RINGKAS DI BERANDA ===== */
+.brief { list-style: none; }
+.brief li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding: 0.65rem 0; border-top: 1px dashed var(--line); }
+.brief li:first-child { border-top: 0; padding-top: 0; }
+.brief li.has-photo { grid-template-columns: 6.5rem 1fr 88px; align-items: start; }
+.thumb { width: 88px; aspect-ratio: 4 / 3; border-radius: 8px; }
+@media (max-width: 639px) {
+  .brief li.has-photo { grid-template-columns: 6.5rem 1fr; }
+  .brief li.has-photo .thumb { grid-column: 2; }
+}
+
+/* ===== DAFTAR ENTRI LENGKAP ===== */
+.entry { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding: 1.1rem 0; border-top: 1px dashed var(--line); }
+.entry:first-of-type { border-top: 0; padding-top: 0; }
+.when { color: var(--muted); font-size: 0.88rem; font-weight: 500; line-height: 1.5; padding-top: 0.2rem; }
+.entry h3 { font-size: 1.15rem; font-weight: 600; }
+.org { color: var(--muted); font-size: 0.93rem; margin-bottom: 0.4rem; }
+.badge { display: inline-block; vertical-align: middle; background: var(--accent); color: #fff; font-family: var(--body); font-size: 0.78rem; font-weight: 600; padding: 0 0.65rem; border-radius: 999px; margin-left: 0.3rem; }
+
+/* Foto di dalam entri: kecil, rasio 4:3. Bisa lebih dari satu, otomatis berjajar */
+.photos { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
+.entry-photo { width: 200px; max-width: 100%; aspect-ratio: 4 / 3; }
+.entry-photo.contain { width: 260px; }
+
+/* ===== ALBUM FOTO ===== */
+.album-cover { display: block; padding: 0; border: 0; cursor: pointer; font: inherit; }
+.album-cover:focus-visible, .viewer button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.more {
+  position: absolute; right: 8px; bottom: 8px;
+  background: rgba(16, 26, 35, 0.85); color: #fff;
+  font-weight: 600; font-size: 0.85rem;
+  padding: 0.05rem 0.65rem; border-radius: 999px;
+}
+
+.viewer { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; background: rgba(8, 13, 18, 0.95); color: #fff; }
+.viewer[hidden], .viewer-grid[hidden], .viewer-single[hidden], .viewer-back[hidden] { display: none; }
+
+.viewer-bar { display: flex; align-items: center; gap: 0.9rem; padding: 0.9rem 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+.viewer-title { font-family: var(--display); font-size: 1.1rem; margin-right: auto; }
+.viewer-count { color: #b7c3ce; font-size: 0.9rem; }
+.viewer-bar button, .viewer-single > button {
+  font: inherit; color: #fff; background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 999px;
+  padding: 0.25rem 1rem; cursor: pointer;
+}
+.viewer-bar button:hover, .viewer-single > button:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Tampilan 1: semua foto */
+.viewer-grid { flex: 1; overflow-y: auto; padding: 1.25rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem; align-content: start; }
+.viewer-thumb { aspect-ratio: 16 / 10; padding: 0; border: 0; cursor: pointer; background-image: none; background-color: #0c141b; }
+.viewer-thumb img { object-fit: contain; }
+
+/* Tampilan 2: satu foto besar */
+.viewer-single { flex: 1; min-height: 0; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.75rem; padding: 1rem; }
+.viewer-single > button { width: 2.6rem; height: 2.6rem; padding: 0; border-radius: 50%; font-size: 1.6rem; line-height: 1; }
+.viewer-single figure { min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; }
+.viewer-single img { max-width: 100%; max-height: calc(100vh - 11rem); object-fit: contain; border-radius: 8px; }
+.viewer-single figcaption { color: #d3dce4; font-size: 0.95rem; text-align: center; max-width: 50em; }
+.viewer.satu .viewer-single > button { display: none; }
+
+/* ===== PROYEK ===== */
+.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1.75rem 1.25rem; }
+.project { display: block; color: inherit; text-decoration: none; }
+.project .frame { aspect-ratio: 4 / 3; margin-bottom: 0.7rem; }
+.project h3 { font-size: 1.05rem; font-weight: 600; }
+.project p { font-size: 0.93rem; margin-top: 0.2rem; }
+.project a { display: inline-block; margin-top: 0.4rem; font-weight: 600; font-size: 0.93rem; color: var(--ink); }
+.project a:hover { color: var(--accent); }
+a.project:hover h3 { color: var(--accent); }
+.tags { color: var(--muted); }
+
+/* ===== GALERI: kotak kecil, rasio 1:1 ===== */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.6rem; }
+.gallery .frame { aspect-ratio: 1; }
+
+/* ===== TESTIMONIAL ===== */
+.quotes { display: grid; gap: 1.75rem; }
+.quote { border-left: 3px solid var(--accent); padding-left: 1.1rem; max-width: 40em; }
+.quote p { font-family: var(--display); font-size: 1.1rem; font-weight: 600; line-height: 1.5; }
+.quote .by { display: block; margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem; }
+.tulis-ulasan {
+  display: inline-block; margin-top: 1.75rem; padding: 0.45rem 1.2rem;
+  border: 1.5px solid var(--accent); border-radius: 999px;
+  color: var(--accent); font-weight: 600; font-size: 0.95rem; text-decoration: none;
+}
+.tulis-ulasan:hover { background: var(--accent); color: #fff; }
+.tulis-ulasan[hidden] { display: none; }
+
+/* ===== FOOTER ===== */
+.footer { color: var(--muted); font-size: 0.85rem; padding-top: 1.5rem; margin-top: 1rem; border-top: 1px solid var(--line); }
+.totop { display: inline-block; margin-top: 0.75rem; font-size: 0.9rem; font-weight: 600; }
+
+/* ===== DESKTOP: panel kiri menempel ===== */
+@media (min-width: 960px) {
+  .shell { display: grid; grid-template-columns: 320px 1fr; }
+  .side { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 2rem 2rem 2rem 2.5rem; }
+  .menu { flex-direction: column; gap: 0.35rem; }
+  .content { padding: 2rem 2.5rem 4rem 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+/* ===== ALBUM KECIL DI BARIS RINGKAS BERANDA ===== */
+.brief .entry-photo, .brief .entry-photo.contain { width: 88px; }
+.brief .more { right: 4px; bottom: 4px; font-size: 0.72rem; padding: 0 0.45rem; }
+@media (max-width: 639px) {
+  .brief li.has-photo .album { grid-column: 2; }
+}
+.gpa {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
