@@ -203,10 +203,6 @@ function parseCsv(teks) {
   return baris;
 }
 
-const ulasanCfg = {
-  form: "https://forms.gle/hgBvhDPX2e13rXo28",
-  csv: ""
-}
 
 const wadahUlasan = document.getElementById("ulasan-list");
 if (wadahUlasan && ulasanCfg.csv) {
