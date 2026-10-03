@@ -21,6 +21,7 @@ const menu = [
   ["index.html", "Beranda"],
   ["pengalaman.html", "Pengalaman"],
   ["lomba.html", "Lomba dan prestasi"],
+  ["program.html", "Program dan training"],
   ["seminar.html", "Seminar dan sertifikat"],
   ["proyek.html", "Proyek"],
   ["galeri.html", "Galeri"]
