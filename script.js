@@ -203,10 +203,9 @@ function parseCsv(teks) {
   return baris;
 }
 
-const tombolUlasan = document.getElementById("ulasan-form");
-if (tombolUlasan) {
-  if (ulasanCfg.form) tombolUlasan.href = ulasanCfg.form;
-  else tombolUlasan.hidden = true;
+const ulasanCfg = {
+  form: "https://forms.gle/hgBvhDPX2e13rXo28",
+  csv: ""
 }
 
 const wadahUlasan = document.getElementById("ulasan-list");
