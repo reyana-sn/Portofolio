@@ -18,13 +18,13 @@ const ulasanCfg = {
 };
 
 const menu = [
-  ["index.html", "Beranda"],
-  ["pengalaman.html", "Pengalaman"],
-  ["lomba.html", "Lomba dan prestasi"],
-  ["program.html", "Program dan training"],
-  ["seminar.html", "Seminar dan sertifikat"],
-  ["proyek.html", "Proyek"],
-  ["galeri.html", "Galeri"]
+  ["home.html", "Home"],
+  ["pengalaman.html", "Experience"],
+  ["lomba.html", "Competitions & Achievements"],
+  ["program.html", "Program & training"],
+  ["seminar.html", "Workshop & Sertificate"],
+  ["proyek.html", "Project"],
+  ["galeri.html", "Galerry"]
 ];
 
 // ===== BAGIAN DI BAWAH INI TIDAK PERLU DIUBAH =====
