@@ -19,12 +19,12 @@ const ulasanCfg = {
 
 const menu = [
   ["home.html", "Home"],
-  ["pengalaman.html", "Experience"],
-  ["lomba.html", "Competitions & Achievements"],
+  ["experience.html", "Experience"],
+  ["competition.html", "Competitions & Achievements"],
   ["program.html", "Program & training"],
-  ["seminar.html", "Workshop & Sertificate"],
-  ["proyek.html", "Project"],
-  ["galeri.html", "Galerry"]
+  ["workshop.html", "Workshop & Sertificate"],
+  ["project.html", "Project"],
+  ["galerry.html", "Galerry"]
 ];
 
 // ===== BAGIAN DI BAWAH INI TIDAK PERLU DIUBAH =====
