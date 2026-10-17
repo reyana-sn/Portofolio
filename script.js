@@ -1,6 +1,6 @@
 // ===== ISI DATAMU DI SINI (berlaku di semua halaman) =====
 const profil = {
-  nama: "Muhammad Alif Dzakii Ikhsan Sofyan.",
+  nama: "Muhammad Alif Dzakii Ikhsan Sofyan",
   inisial: "MADIS",
   peran: "Bachelor of Mechanical Engineering<br>Universitas Sebelas Maret",
   foto: "pp.jpeg",
