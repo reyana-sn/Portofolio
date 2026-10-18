@@ -175,19 +175,6 @@ a.frame { display: block; }
 .viewer.satu .viewer-single > button { display: none; }
 
 /* ===== PROYEK ===== */
-.project .frame {
-  aspect-ratio: 4 / 3;
-  margin-bottom: 0.7rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
-}
-
-.project .frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1.75rem 1.25rem; }
 .project { display: block; color: inherit; text-decoration: none; }
 .project .frame { aspect-ratio: 4 / 3; margin-bottom: 0.7rem; }
